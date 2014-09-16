@@ -6,6 +6,35 @@
 
 ;;;============================================================================
 
+;;; URI handling.
+
+;;;============================================================================
+
+(define-library (https://github.com/feeley/www uri)
+
+  (export make-uri
+          uri?
+          uri-authority
+          uri-authority-set!
+          uri-fragment
+          uri-fragment-set!
+          uri-path
+          uri-path-set!
+          uri-query
+          uri-query-set!
+          uri-scheme
+          uri-scheme-set!
+
+          string->uri
+          string->uri-query
+          encode-for-uri)
+
+  (import (gambit))
+
+  (begin
+
+;;;============================================================================
+
 (declare
   (standard-bindings)
   (extended-bindings)
@@ -441,5 +470,7 @@
                 (copy result i j n)))))
 
       (encode 0 0 0))))
+
+))
 
 ;;;============================================================================

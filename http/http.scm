@@ -6,6 +6,53 @@
 
 ;;;============================================================================
 
+(define-library (https://github.com/feeley/www http)
+
+  (export make-http-server
+          http-server-start!
+          reply
+          reply-html
+          current-request
+
+          make-request
+          request?
+          request-attributes
+          request-attributes-set!
+          request-connection
+          request-connection-set!
+          request-method
+          request-method-set!
+          request-query
+          request-query-set!
+          request-server
+          request-server-set!
+          request-uri
+          request-uri-set!
+          request-version
+          request-version-set!
+
+          make-server
+          server?
+          server-method-table
+          server-method-table-set!
+          server-port-number
+          server-port-number-set!
+          server-threaded?
+          server-threaded?-set!
+          server-timeout
+          server-timeout-set!
+
+          encode-x-www-form-urlencoded
+          decode-x-www-form-urlencoded
+          get-content)
+
+  (import (gambit)
+          (https://github.com/feeley/www html))
+
+  (begin
+
+;;;============================================================================
+
 (declare
   (standard-bindings)
   (extended-bindings)
@@ -1028,5 +1075,7 @@
            (char=? #\space (string-ref line (+ pos 1)))
            (cons (substring line 0 pos)
                  (substring line (+ pos 2) (string-length line)))))))
+
+))
 
 ;==============================================================================

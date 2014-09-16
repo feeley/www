@@ -10,6 +10,18 @@
 
 ;;;============================================================================
 
+(define-library (https://github.com/feeley/www server)
+
+  (import (gambit)
+          (https://github.com/feeley/base64)
+          (https://github.com/feeley/www http)
+          (https://github.com/feeley/www uri)
+          (https://github.com/feeley/www html))
+
+  (begin
+
+;;;============================================================================
+
 (declare
   (standard-bindings)
   (extended-bindings)
@@ -385,4 +397,7 @@ EOF
 (table-set! page-generators "/terminate-server" page-terminate-server)
 
 ;==============================================================================
+
 (main "8000")
+
+))
